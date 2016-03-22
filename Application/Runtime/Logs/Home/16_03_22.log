@@ -52,3 +52,18 @@ INFO: [ app_end ] --START--
 INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000024s ]
 INFO: [ app_end ] --END-- [ RunTime:0.000045s ]
 
+[ 2016-03-22T23:37:39+08:00 ] 127.0.0.1 /weixin/
+ERR: 模板不存在:./Theme/Index_index.html
+
+[ 2016-03-22T23:41:57+08:00 ] 127.0.0.1 /weixin/index.php
+ERR: 模板不存在:./Theme/Index_index.html
+
+[ 2016-03-22T23:42:01+08:00 ] 127.0.0.1 /weixin/index.php
+ERR: 模板不存在:./Theme/Index_index.html
+
+[ 2016-03-22T23:42:11+08:00 ] 127.0.0.1 /weixin/index.php
+ERR: 模板不存在:./Theme/Index_index.html
+
+[ 2016-03-22T23:42:13+08:00 ] 127.0.0.1 /weixin/index.php
+ERR: 模板不存在:./Theme/Index_index.html
+
