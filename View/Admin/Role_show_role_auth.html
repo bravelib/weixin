@@ -1,0 +1,90 @@
+<include file="Admin/head"/>
+
+<body>
+
+<div id="wrapper">
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4 class="page-header">{$page_name}</h4>
+            </div>
+            <!-- /.col-lg-12 -->
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        {$role_name} 组权限
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="dataTable_wrapper">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>菜单</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <foreach name="lists_exists" item="vo">
+                                    <tr class="">
+                                        <td>{$vo["name"]}</td>
+                                        <td class="center">
+                                            <a href="{:U('Admin/Role/delete_role_auth',['menu_id'=>$vo['id'],'role_id'=>$_GET['id']])}"
+                                               class="btn btn-outline btn-warning btn-xs js-ajax-delete">删除</a>
+                                        </td>
+                                    </tr>
+                                </foreach>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        非{$role_name} 组权限
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="dataTable_wrapper">
+                            <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <thead>
+                                <tr>
+                                    <th>菜单</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <foreach name="lists_not_exists" item="vo">
+                                    <tr class="">
+                                        <td>{$vo["name"]}</td>
+                                        <td class="center">
+                                            <a href="{:U('Admin/Role/add_role_auth',['menu_id'=>$vo['id'],'role_id'=>$_GET['id']])}"
+                                               class="btn btn-outline btn-success btn-xs js-ajax-dialog-btn">转入该组</a>
+                                        </td>
+                                    </tr>
+                                </foreach>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
+
+</div>
+<!-- /#wrapper -->
+</body>
+<include file="Admin/foot"/>
+

@@ -1,0 +1,36 @@
+<!-- menu-->
+<div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+        <ul class="nav" id="side-menu">
+            <foreach name="lists1" item="menu">
+                <li <if condition="$menu['active'] eq 1">class='active'</if>>
+                    <a href="{:U($menu['url'])}">
+                        <i class="fa fa-{$menu['icon']} fa-fw"></i> {$menu['name']}
+
+                        <?php $lists2_tpl = $lists2[$menu['id']]; ?>
+
+                        <if condition="!empty($lists2_tpl)"><span class="fa arrow"></span></if>
+                    </a>
+
+                    <if condition="$menu['active'] eq 1">
+                        <ul class="nav nav-second-level collapse in" aria-expanded="true">
+                            <else/>
+                            <ul class="nav nav-second-level">
+                    </if>
+
+                    <foreach name="lists2_tpl" item="menu2">
+                        <li>
+                            <a href="{:U($menu2['url'])}" <if condition="$menu2['active'] eq 1">class='active'</if>><i class="fa fa-{$menu2['icon']} fa-fw"></i> {$menu2['name']}</a>
+                        </li>
+                    </foreach>
+        </ul>
+
+        </li>
+        </foreach>
+        </ul>
+    </div>
+    <!-- /.sidebar-collapse -->
+</div>
+<!-- /.navbar-static-side -->
+<!-- /menu-->
+</nav>

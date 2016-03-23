@@ -145,8 +145,7 @@
                         //按钮文案、状态修改
                         btn.removeClass('disabled').text(text.replace('中...', '')).parent().find('span').remove();
                         if (data.state === 'success') {
-                            $('<span class="tips_success">' + data.info + '</span>').appendTo(btn.parent()).fadeIn('slow').delay(1000).fadeOut(function () {
-                            });
+                            $('<div class="alert alert-success alert-dismissable ajax-alert-danger" >' + data.info + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>').appendTo($(".js-ajax-info")).fadeIn('fast');
                         } else if (data.state === 'fail') {
                             var $verify_img = form.find(".verify_img");
                             if ($verify_img.length) {
@@ -156,13 +155,15 @@
                             var $verify_input = form.find("[name='verify']");
                             $verify_input.val("");
                             var btn_widht = btn.width() + 34;
+
                             $('<div class="alert alert-danger alert-dismissable ajax-alert-danger" >' + data.info + '<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>').appendTo($(".js-ajax-info")).fadeIn('fast');
 
-                            window.setTimeout(function () {
-                                $(".ajax-alert-danger").hide()
-                            }, 2000);
                             btn.prop('disabled', false).removeClass('disabled');
                         }
+
+                        window.setTimeout(function () {
+                            $(".ajax-alert-danger").hide()
+                        }, 2000);
 
                         if (data.referer) {
                             //返回带跳转地址

@@ -30,9 +30,9 @@ class Think {
       // 注册AUTOLOAD方法
       spl_autoload_register('Think\Think::autoload');      
       // 设定错误和异常处理
-      register_shutdown_function('Think\Think::fatalError');
+//      register_shutdown_function('Think\Think::fatalError');
       set_error_handler('Think\Think::appError');
-      set_exception_handler('Think\Think::appException');
+//      set_exception_handler('Think\Think::appException');
 
       // 初始化文件存储方式
       Storage::connect(STORAGE_TYPE);
@@ -268,7 +268,7 @@ class Think {
               case E_PARSE:
               case E_CORE_ERROR:
               case E_COMPILE_ERROR:
-              case E_USER_ERROR:  
+              case E_USER_ERROR:
                 ob_end_clean();
                 self::halt($e);
                 break;
@@ -330,7 +330,7 @@ class Think {
         }else{
             $info   =   ($label?$label.':':'').print_r($value,true);
             $level  =   strtoupper($level);
-            
+
             if((defined('IS_AJAX') && IS_AJAX) || !C('SHOW_PAGE_TRACE')  || $record) {
                 Log::record($info,$level,$record);
             }else{

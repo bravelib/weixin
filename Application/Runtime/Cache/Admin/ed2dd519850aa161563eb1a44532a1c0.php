@@ -23,6 +23,8 @@
     <!-- Custom Fonts -->
     <link href="/weixin/Public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <link href="/weixin/Public/js/artDialog/skins/default.css" rel="stylesheet"/>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -42,6 +44,7 @@
                 <div class="panel-heading">
                     <h3 class="panel-title">请登录</h3>
                 </div>
+
                 <div class="panel-body">
                     <form role="form" class="js-ajax-form" action="<?php echo U('Admin/Login/login_post');?>" method="post">
                         <fieldset>
@@ -49,16 +52,13 @@
                                 <input class="form-control" placeholder="账号" name="user_name" type="text" autofocus>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" placeholder="密码" name="user_pass" type="password"
-                                       value="">
+                                <input class="form-control" placeholder="密码" name="user_pass" type="password" value="">
                             </div>
 
                             <!-- Change this to a button or input when using this as a form -->
                             <button class="btn btn-lg btn-success btn-block js-ajax-submit">登录</button>
                         </fieldset>
                     </form>
-
-
                 </div>
             </div>
 
